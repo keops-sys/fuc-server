@@ -3,7 +3,7 @@ const app = express();
 const web3js = require("@solana/web3.js");
 const francium_sdk = require("francium-sdk");
 
-const port = process.env.PORT || 4000
+const PORT = process.env.PORT || 4000
 
 var fr = new francium_sdk.default({
     connection: new web3js.Connection('https://free.rpcpool.com')
@@ -33,6 +33,6 @@ app.get('/lendingPositions/:address', (req,res) =>  {
 
 app.get('/', (req,res) => res.send('FUC - Francium Unofficial Companion'));
 
-app.listen(port, () => {
-  console.log(`⚡️ [FUC server]: Server is running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`⚡️ [FUC server]: Server is running at http://localhost:${PORT}`);
 });
