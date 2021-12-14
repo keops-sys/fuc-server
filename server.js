@@ -11,8 +11,12 @@ var fr = new francium_sdk.default({
 
 // Get User Farm Positions
 //
-app.get('/farmPositions/:address', (req,res) =>  {
+app.get('/farming/:address', (req,res) =>  {
     var address = req.params.address;
+    if (address == null) {
+        throw new Api400Error(`Missing address param`)
+    }
+
     fr.getUserFarmPosition(new web3js.PublicKey(address))
     .then(function (result) {
         console.log(result);
@@ -22,7 +26,7 @@ app.get('/farmPositions/:address', (req,res) =>  {
 
 // Get User Lending Pool
 //
-app.get('/lendingPositions/:address', (req,res) =>  {
+app.get('/lending/:address', (req,res) =>  {
     var address = req.params.address;
     fr.getUserLendingPosition(new web3js.PublicKey(req.params.address))
     .then(function (result) {
