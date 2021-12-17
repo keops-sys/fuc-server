@@ -13,10 +13,6 @@ var fr = new francium_sdk.default({
 //
 app.get('/farming/:address', (req,res) =>  {
     var address = req.params.address;
-    if (address == null) {
-        throw new Api400Error(`Missing address param`)
-    }
-
     fr.getUserFarmPosition(new web3js.PublicKey(address))
     .then(function (result) {
         console.log(result);
