@@ -9,10 +9,8 @@ Dockerfile for hosting using https://www.koyeb.com/
 
 Get farming positions for a specific address:
 
-`YOUR_IP/farming/SOLANA_PUBLIC_ADRESS`
+`https://YOUR_IP/farming/SOLANA_PUBLIC_ADRESS`
 
 Get lending positions for a specific address:
 
-`YOUR_IP/lending/SOLANA_PUBLIC_ADRESS`
-
-
+`https://YOUR_IP/lending/SOLANA_PUBLIC_ADRESS`
